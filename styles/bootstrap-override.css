@@ -1,0 +1,1078 @@
+/*
+ * GCT Website - Bootstrap Override Layer
+ * Prevents Bootstrap from overriding existing custom design
+ * This file MUST be loaded AFTER Bootstrap CSS
+ */
+
+/* ==========================================
+   DISABLE BOOTSTRAP REBOOT
+   ========================================== */
+
+/*
+ * We use our own reset in foundation.css.
+ * These overrides ensure Bootstrap doesn't interfere
+ * with our established typography and colors.
+ */
+
+/* Restore our body styles */
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    color: var(--color-charcoal);
+    background-color: var(--color-ivory);
+}
+
+/* Restore our heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-wine);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: var(--text-5xl);
+    letter-spacing: var(--tracking-tight);
+}
+
+h2 {
+    font-size: var(--text-4xl);
+    letter-spacing: var(--tracking-tight);
+}
+
+h3 {
+    font-size: var(--text-3xl);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+}
+
+h5 {
+    font-size: var(--text-xl);
+}
+
+h6 {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+}
+
+/* Restore our paragraph styles */
+p {
+    margin-top: 0;
+    margin-bottom: var(--space-md);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Restore our link styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Restore our list styles */
+ul,
+ol {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Restore our button reset */
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* ==========================================
+   BOOTSTRAP GRID CUSTOMIZATION
+   ========================================== */
+
+/*
+ * Override Bootstrap container to match our custom container
+ * while keeping Bootstrap grid functionality
+ */
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+    --bs-gutter-x: calc(var(--space-lg) * 2);
+}
+
+/* Match our max-width */
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: var(--container-xl);
+    }
+}
+
+/* ==========================================
+   BOOTSTRAP ROW GUTTER MAPPING
+   ========================================== */
+
+/*
+ * Map Bootstrap gutter classes to our spacing tokens
+ * to maintain visual consistency
+ */
+.g-custom {
+    --bs-gutter-x: var(--space-xl);
+    --bs-gutter-y: var(--space-xl);
+}
+
+.gx-custom {
+    --bs-gutter-x: var(--space-xl);
+}
+
+.gy-custom {
+    --bs-gutter-y: var(--space-xl);
+}
+
+/* Our standard gap for grid layouts */
+.g-section {
+    --bs-gutter-x: var(--space-xl);
+    --bs-gutter-y: var(--space-xl);
+}
+
+.g-editorial {
+    --bs-gutter-x: var(--space-3xl);
+    --bs-gutter-y: var(--space-3xl);
+}
+
+/* ==========================================
+   ASPECT RATIO UTILITIES
+   ========================================== */
+
+/*
+ * Standard aspect ratio classes for image placeholders
+ * Replaces inline style="aspect-ratio: X/Y"
+ */
+.aspect-4-5 {
+    aspect-ratio: 4 / 5;
+}
+
+.aspect-1-1 {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-3-2 {
+    aspect-ratio: 3 / 2;
+}
+
+.aspect-2-3 {
+    aspect-ratio: 2 / 3;
+}
+
+.aspect-16-10 {
+    aspect-ratio: 16 / 10;
+}
+
+.aspect-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+/* ==========================================
+   IMAGE PLACEHOLDER SYSTEM
+   ========================================== */
+
+/*
+ * Standardized image placeholder structure
+ * Container defines size, img fills container
+ */
+.image-placeholder {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-parchment) 0%, var(--color-cream) 100%);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    /* Space for gradient border */
+}
+
+.image-placeholder--circle {
+    border-radius: 50%;
+}
+
+.image-placeholder--circle::before {
+    border-radius: 50%;
+}
+
+.image-placeholder--circle img {
+    border-radius: 50%;
+}
+
+/* Gradient border effect */
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    padding: 3px;
+    background: linear-gradient(135deg,
+            var(--color-burgundy) 0%,
+            var(--color-copper) 25%,
+            var(--color-wine) 50%,
+            var(--color-burgundy) 75%,
+            var(--color-copper) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.image-placeholder img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: calc(var(--radius-md) - 4px);
+    background-color: var(--color-parchment);
+    z-index: 1;
+}
+
+/* Placeholder label styling (shown when no image) */
+.image-placeholder__label {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(65, 23, 31, 0.85);
+    color: var(--color-ivory);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    white-space: nowrap;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+}
+
+/* Hide label when image is loaded */
+.image-placeholder img[src]:not([src=""])~.image-placeholder__label,
+.image-placeholder img[src]:not([src=""])~span {
+    display: none;
+}
+
+/* Aspect ratio variants for image placeholders */
+.image-placeholder--4x5 {
+    aspect-ratio: 4 / 5;
+}
+
+.image-placeholder--1x1 {
+    aspect-ratio: 1 / 1;
+}
+
+.image-placeholder--3x2 {
+    aspect-ratio: 3 / 2;
+}
+
+.image-placeholder--2x3 {
+    aspect-ratio: 2 / 3;
+}
+
+.image-placeholder--16x10 {
+    aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 768px) {
+
+    .image-placeholder__label,
+    .image-placeholder span {
+        font-size: var(--text-xs);
+    }
+}
+
+/* ==========================================
+   PAGE-SPECIFIC STYLES (from index.html)
+   ========================================== */
+
+/* Hero Content */
+.hero-content {
+    padding-right: var(--space-2xl);
+}
+
+.hero-description {
+    font-size: var(--text-lg);
+    color: var(--color-slate);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-xl);
+}
+
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.hero-decoration {
+    width: 100%;
+    height: auto;
+}
+
+/* About Section */
+.about-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    transform: rotate(-3deg);
+}
+
+.about-image-item:nth-child(2) {
+    transform: translateY(var(--space-xl));
+}
+
+/* About Image Item Variants */
+.about-image-item {
+    border-radius: var(--radius-lg);
+}
+
+.about-image-item--cream {
+    background: linear-gradient(135deg, var(--color-cream), var(--color-parchment));
+}
+
+.about-image-item--burgundy {
+    background: linear-gradient(135deg, var(--color-burgundy), var(--color-wine));
+}
+
+/* Why Choose Section */
+.why-feature {
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-lg);
+    border-left: 3px solid var(--color-copper);
+}
+
+.why-feature h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    color: var(--color-wine);
+    margin-bottom: var(--space-sm);
+}
+
+.why-feature p {
+    color: var(--color-slate);
+    margin-bottom: 0;
+}
+
+/* CTA Box */
+.cta-box {
+    background-color: var(--color-ivory);
+    padding: var(--space-3xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Principal's Message */
+.principal-quote {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-style: italic;
+    color: var(--color-charcoal);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    padding: var(--space-lg) 0;
+    border-left: 4px solid var(--color-burgundy);
+    padding-left: var(--space-lg);
+}
+
+.principal-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-top: var(--space-lg);
+}
+
+.principal-info strong {
+    font-family: var(--font-display);
+    color: var(--color-wine);
+    font-size: var(--text-lg);
+}
+
+.principal-info span {
+    color: var(--color-slate);
+}
+
+.principal-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal-image-placeholder {
+    width: 250px;
+    height: 250px;
+    background: var(--color-cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Campus Life Cards */
+.campus-card {
+    background: var(--color-parchment);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--duration-normal) var(--ease-default);
+}
+
+.campus-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-ivory);
+}
+
+.campus-card__icon {
+    margin-bottom: var(--space-md);
+}
+
+.campus-card h4 {
+    font-family: var(--font-display);
+    color: var(--color-wine);
+    margin-bottom: var(--space-sm);
+}
+
+.campus-card p {
+    color: var(--color-slate);
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+}
+
+/* Section Header Variant for Hero */
+.section-header--hero {
+    max-width: 800px;
+    margin-left: 0;
+}
+
+.section-subtitle--left {
+    text-align: left;
+}
+
+/* ==========================================
+   HERITAGE PAGE STYLES
+   ========================================== */
+
+/* Hero Section Variant */
+.section--hero-alt {
+    min-height: 60vh;
+}
+
+/* Mission and Vision Cards */
+.mission-card,
+.vision-card {
+    padding: var(--space-2xl);
+    background-color: var(--color-ivory);
+    border-radius: var(--radius-lg);
+}
+
+.mission-card h2,
+.vision-card h2 {
+    font-size: var(--text-2xl);
+    margin-top: var(--space-sm);
+}
+
+/* Value Items */
+.value-item {
+    text-align: center;
+    padding: var(--space-xl);
+}
+
+.value-icon {
+    margin-bottom: var(--space-md);
+}
+
+.value-item h4 {
+    font-family: var(--font-display);
+    color: var(--color-wine);
+    margin-bottom: var(--space-sm);
+}
+
+.value-item p {
+    color: var(--color-slate);
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+}
+
+/* Timeline Component */
+.timeline {
+    position: relative;
+    padding-left: var(--space-2xl);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--color-burgundy), var(--color-copper));
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--space-2xl);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: calc(-1 * var(--space-2xl) - 6px);
+    top: 0;
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-burgundy);
+    border-radius: 50%;
+    border: 3px solid var(--color-ivory);
+}
+
+.timeline-content {
+    background-color: var(--color-ivory);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-date {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--color-copper);
+}
+
+.timeline-content h4 {
+    font-family: var(--font-display);
+    color: var(--color-wine);
+    margin: var(--space-sm) 0;
+}
+
+.timeline-content p {
+    color: var(--color-slate);
+    margin-bottom: 0;
+}
+
+/* Leader Cards */
+.leader-card {
+    text-align: center;
+    padding: var(--space-xl);
+    background-color: var(--color-parchment);
+    border-radius: var(--radius-lg);
+}
+
+.leader-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto var(--space-lg);
+    background: linear-gradient(135deg, var(--color-burgundy), var(--color-copper));
+    border-radius: 50%;
+}
+
+.leader-card h4 {
+    font-family: var(--font-display);
+    color: var(--color-wine);
+    margin-bottom: var(--space-xs);
+}
+
+.leader-role {
+    font-size: var(--text-sm);
+    color: var(--color-copper);
+    font-weight: var(--weight-medium);
+    margin-bottom: var(--space-md);
+}
+
+.leader-desc {
+    color: var(--color-slate);
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   PATHWAYS PAGE STYLES  
+   ========================================== */
+
+/* Section Hero Variant - shorter */
+.section--hero-alt-short {
+    min-height: 50vh;
+}
+
+/* Program Stats */
+.program-stat {
+    text-align: center;
+    padding: var(--space-xl);
+}
+
+.program-stat__number {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-burgundy);
+    line-height: 1;
+}
+
+.program-stat__label {
+    font-size: var(--text-sm);
+    color: var(--color-slate);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    margin-top: var(--space-sm);
+}
+
+/* Pathway Content */
+.pathway-content h2 {
+    margin-top: var(--space-md);
+}
+
+.pathway-modules {
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background-color: var(--color-parchment);
+    border-radius: var(--radius-md);
+}
+
+.pathway-modules h4 {
+    font-family: var(--font-display);
+    color: var(--color-wine);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-md);
+}
+
+.module-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.module-list li {
+    position: relative;
+    padding-left: var(--space-lg);
+    color: var(--color-slate);
+}
+
+.module-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-copper);
+    border-radius: 50%;
+}
+
+.pathway-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pathway-icon-box {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-burgundy), var(--color-wine));
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.pathway-icon-box--alt {
+    background: linear-gradient(135deg, var(--color-copper), var(--color-copper-dark));
+}
+
+.short-course-card {
+    background: var(--color-ivory);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--duration-normal) var(--ease-default);
+    border: 2px solid transparent;
+}
+
+.short-course-card:hover {
+    border-color: var(--color-burgundy);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.short-course-icon {
+    margin-bottom: var(--space-md);
+}
+
+.short-course-card h4 {
+    font-family: var(--font-display);
+    color: var(--color-wine);
+    margin-bottom: var(--space-sm);
+}
+
+.short-course-card p {
+    color: var(--color-slate);
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+}
+
+/* Responsive for pathway page */
+@media (max-width: 768px) {
+    .pathway-visual {
+        order: -1;
+        margin-bottom: var(--space-xl);
+    }
+
+    .pathway-icon-box {
+        width: 150px;
+        height: 150px;
+    }
+
+    .pathway-icon-box svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE OVERRIDES
+   ========================================== */
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        margin-top: var(--space-2xl);
+    }
+
+    .about-image-grid {
+        transform: none;
+        margin-bottom: var(--space-2xl);
+    }
+
+    .about-image-item:nth-child(2) {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   PROJECT CARDS (Division Pages)
+   ========================================== */
+
+/* Project Icon Styling */
+/* Project Icon Styling */
+.project-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin-right: var(--space-sm);
+    color: var(--color-burgundy);
+    vertical-align: middle;
+}
+
+.project-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+    stroke-width: 2px;
+    fill: none;
+}
+
+/* Highlight Icon Styling (CIT Page) */
+.highlight-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-right: var(--space-sm);
+    color: var(--color-copper);
+    vertical-align: middle;
+}
+
+.highlight-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 2px;
+    fill: none;
+}
+
+/* Base Icon Backup (Ensures consistency across division pages) */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-copper);
+    vertical-align: middle;
+}
+
+.icon svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+.icon--sm {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Project Image Placeholder */
+.project-image {
+    margin-bottom: var(--space-md);
+    border-radius: var(--radius-md);
+}
+
+.project-card .project-icon+.project-image {
+    margin-top: var(--space-md);
+}
+
+@media (max-width: 768px) {
+    .project-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* ==========================================
+   CAMPUS TOUR VIDEO & SECTION IMAGES
+   ========================================== */
+
+/* Campus Tour Video Styling */
+.campus-tour-video {
+    max-width: 800px;
+    margin: var(--space-2xl) auto 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.tour-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-lg);
+}
+
+/* Section Hero Image */
+.section-hero-image {
+    max-width: 900px;
+    margin: var(--space-2xl) auto 0;
+}
+
+.section-hero-image .image-placeholder {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   BENTO/MASONRY GRID LAYOUT
+   ========================================== */
+
+.campus-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    gap: var(--space-md);
+    grid-template-areas:
+        "main main computer workshop"
+        "main main library library"
+        "panorama panorama sports student";
+}
+
+/* Gallery Item Variants */
+.gallery-item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--duration-normal) var(--ease-default);
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-item .image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+/* Grid area assignments */
+.gallery-item--large {
+    grid-area: main;
+}
+
+.gallery-item--small:nth-of-type(2) {
+    grid-area: computer;
+}
+
+.gallery-item--small:nth-of-type(3) {
+    grid-area: workshop;
+}
+
+.gallery-item--medium {
+    grid-area: library;
+}
+
+.gallery-item--wide {
+    grid-area: panorama;
+}
+
+.gallery-item--tall {
+    grid-area: sports;
+}
+
+.gallery-item--small:last-of-type {
+    grid-area: student;
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+    .campus-gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 180px);
+        grid-template-areas:
+            "main main computer"
+            "main main workshop"
+            "library panorama panorama"
+            "sports sports student";
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .campus-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 150px);
+        gap: var(--space-sm);
+        grid-template-areas:
+            "main main"
+            "main main"
+            "computer workshop"
+            "library panorama"
+            "sports sports"
+            "student student";
+    }
+
+    .campus-tour-video {
+        margin-top: var(--space-xl);
+    }
+
+    .section-hero-image {
+        margin-top: var(--space-xl);
+    }
+
+    .section-hero-image {
+        margin-top: var(--space-xl);
+    }
+}
+
+/* ==========================================
+   FACULTY CARDS (Computing Division)
+   ========================================== */
+
+.faculty-card {
+    text-align: center;
+    padding: var(--space-lg);
+    background-color: var(--color-ivory);
+    border-radius: var(--radius-lg);
+    transition: transform var(--duration-normal) var(--ease-default);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.faculty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-white);
+}
+
+.faculty-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-md);
+    position: relative;
+    /* Inherit image-placeholder styles via HTML class, 
+       but we enforce dimensions here */
+}
+
+.faculty-role {
+    display: block;
+    color: var(--color-copper);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    margin-bottom: var(--space-xs);
+}
+
+.faculty-qual {
+    display: block;
+    color: var(--color-slate);
+    font-size: var(--text-xs);
+    opacity: 0.8;
+}
+
+/* ==========================================
+   MOBILE FOOTER FIX
+   ========================================== */
+@media (max-width: 768px) {
+    .main-content {
+        margin-bottom: 0 !important;
+    }
+
+    .footer {
+        padding-bottom: 140px !important;
+        background-color: var(--color-wine);
+        /* Subtle pattern for visual interest */
+        background-image:
+            radial-gradient(circle at 20% 100%, rgba(255, 255, 255, 0.03) 0%, transparent 25%),
+            radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 25%),
+            linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+}

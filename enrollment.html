@@ -13,14 +13,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles/tokens.css">
     <link rel="stylesheet" href="styles/foundation.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/bootstrap-override.css">
 </head>
 
 <body>
@@ -34,13 +39,13 @@
         <main class="main-content" id="main-content">
 
             <!-- Page Header -->
-            <section class="section section--hero" style="min-height: 50vh;">
+            <section class="section section--hero section--hero-alt-short">
                 <div class="container">
-                    <div class="section-header section-header--left" style="max-width: 800px; margin-left: 0;">
+                    <div class="section-header section-header--left section-header--hero">
                         <span class="section-eyebrow" data-reveal="fade-up">Join Our Community</span>
                         <h1 data-reveal="fade-up" data-delay="100">Enrollment Gateway</h1>
                         <div class="divider" data-reveal="fade-up" data-delay="200"></div>
-                        <p class="section-subtitle" style="text-align: left;" data-reveal="fade-up" data-delay="300">
+                        <p class="section-subtitle section-subtitle--left" data-reveal="fade-up" data-delay="300">
                             Your pathway to technical excellence begins here. Discover eligibility
                             requirements, admission procedures, and investment details for our programs.
                         </p>
@@ -401,208 +406,6 @@
     <script src="scripts/navigation.js"></script>
     <script src="scripts/reveals.js"></script>
     <script src="scripts/app.js"></script>
-
-    <style>
-        .eligibility-card {
-            background-color: var(--color-ivory);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            text-align: center;
-        }
-
-        .eligibility-icon {
-            margin-bottom: var(--space-md);
-        }
-
-        .eligibility-card h3 {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            font-size: var(--text-xl);
-            margin-bottom: var(--space-sm);
-        }
-
-        .eligibility-card p {
-            color: var(--color-slate);
-            margin-bottom: 0;
-        }
-
-        .process-steps {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .process-step {
-            display: flex;
-            gap: var(--space-xl);
-            padding: var(--space-xl) 0;
-            border-bottom: 1px solid var(--color-cream);
-        }
-
-        .process-step:last-child {
-            border-bottom: none;
-        }
-
-        .process-number {
-            font-family: var(--font-display);
-            font-size: var(--text-3xl);
-            font-weight: var(--weight-bold);
-            color: var(--color-copper);
-            line-height: 1;
-            flex-shrink: 0;
-        }
-
-        .process-content h4 {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            margin-bottom: var(--space-sm);
-        }
-
-        .process-content p {
-            color: var(--color-slate);
-            margin-bottom: 0;
-        }
-
-        .fee-table-wrapper {
-            overflow-x: auto;
-        }
-
-        .fee-table {
-            width: 100%;
-            background-color: var(--color-ivory);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-        }
-
-        .fee-table th,
-        .fee-table td {
-            padding: var(--space-md) var(--space-lg);
-            text-align: left;
-        }
-
-        .fee-table th {
-            background-color: var(--color-wine);
-            color: var(--color-ivory);
-            font-weight: var(--weight-semibold);
-        }
-
-        .fee-table td {
-            border-bottom: 1px solid var(--color-cream);
-        }
-
-        .fee-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .fee-total {
-            background-color: var(--color-parchment);
-            font-weight: var(--weight-semibold);
-        }
-
-        .fee-notes {
-            padding: var(--space-lg);
-            background-color: var(--color-ivory);
-            border-left: 4px solid var(--color-copper);
-            border-radius: var(--radius-md);
-        }
-
-        .docs-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
-        }
-
-        .docs-list li {
-            position: relative;
-            padding-left: var(--space-xl);
-            color: var(--color-charcoal);
-        }
-
-        .docs-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--color-burgundy);
-            font-weight: var(--weight-bold);
-        }
-
-        .docs-card {
-            background-color: var(--color-burgundy);
-            color: var(--color-ivory);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-        }
-
-        .docs-card h4 {
-            color: var(--color-ivory);
-            margin-bottom: var(--space-lg);
-            font-size: var(--text-xl);
-        }
-
-        .date-item {
-            display: flex;
-            justify-content: space-between;
-            padding: var(--space-sm) 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .date-item:last-child {
-            border-bottom: none;
-        }
-
-        .date-label {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .date-value {
-            font-weight: var(--weight-semibold);
-        }
-
-        .cta-box {
-            background-color: var(--color-ivory);
-            padding: var(--space-3xl);
-            border-radius: var(--radius-xl);
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .scholarship-card {
-            background: var(--color-ivory);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all var(--duration-normal) var(--ease-default);
-        }
-
-        .scholarship-card:hover {
-            border-color: var(--color-copper);
-            transform: translateY(-4px);
-        }
-
-        .scholarship-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--color-burgundy), var(--color-wine));
-            color: var(--color-ivory);
-            font-family: var(--font-display);
-            font-size: var(--text-2xl);
-            font-weight: var(--weight-bold);
-            padding: var(--space-md) var(--space-lg);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-md);
-        }
-
-        .scholarship-card h4 {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            margin-bottom: var(--space-sm);
-        }
-
-        .scholarship-card p {
-            color: var(--color-slate);
-            font-size: var(--text-sm);
-            margin-bottom: 0;
-        }
-    </style>
 </body>
 
 </html>

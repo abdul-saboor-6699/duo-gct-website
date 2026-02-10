@@ -22,16 +22,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles/tokens.css">
     <link rel="stylesheet" href="styles/foundation.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/bootstrap-override.css">
 </head>
 
 <body>
@@ -52,7 +56,7 @@
             <section class="section section--hero bg-pattern">
                 <div class="container">
                     <div class="grid grid--editorial">
-                        <div class="section-header section-header--left" style="max-width: 800px; margin-left: 0;">
+                        <div class="section-header section-header--left section-header--hero">
                             <span class="section-eyebrow" data-reveal="fade-up">Excellence in Technical Education</span>
                             <h1 data-reveal="fade-up" data-delay="100">
                                 Shape Your<br>
@@ -73,55 +77,23 @@
                         <div class="hero-visual" data-reveal="fade-left" data-delay="200">
                             <div class="hero-gallery">
                                 <div class="hero-gallery__item hero-gallery__item--large">
-                                    <div class="image-placeholder" style="aspect-ratio: 4/5;">
-                                        <span>
-                                            Campus Life<br>
-                                            <small
-                                                style="display: block; font-size: 0.6em; margin-top: 5px; opacity: 0.7;">
-                                                File: index.html<br>
-                                                Line: 75<br>
-                                                Insert &lt;img src="..."&gt; here
-                                            </small>
-                                        </span>
+                                    <div class="image-placeholder image-placeholder--4x5">
+                                        <img src="" alt="Campus Life">
                                     </div>
                                 </div>
                                 <div class="hero-gallery__item hero-gallery__item--small-top">
-                                    <div class="image-placeholder" style="aspect-ratio: 1/1;">
-                                        <span>
-                                            Labs<br>
-                                            <small
-                                                style="display: block; font-size: 0.6em; margin-top: 5px; opacity: 0.7;">
-                                                File: index.html<br>
-                                                Line: 80<br>
-                                                Insert &lt;img src="..."&gt; here
-                                            </small>
-                                        </span>
+                                    <div class="image-placeholder image-placeholder--1x1">
+                                        <img src="" alt="Laboratory Facilities">
                                     </div>
                                 </div>
                                 <div class="hero-gallery__item hero-gallery__item--small-bottom">
-                                    <div class="image-placeholder" style="aspect-ratio: 3/2;">
-                                        <span>
-                                            Workshops<br>
-                                            <small
-                                                style="display: block; font-size: 0.6em; margin-top: 5px; opacity: 0.7;">
-                                                File: index.html<br>
-                                                Line: 85<br>
-                                                Insert &lt;img src="..."&gt; here
-                                            </small>
-                                        </span>
+                                    <div class="image-placeholder image-placeholder--3x2">
+                                        <img src="" alt="Technical Workshops">
                                     </div>
                                 </div>
                                 <div class="hero-gallery__item hero-gallery__item--tall">
-                                    <div class="image-placeholder" style="aspect-ratio: 2/3;">
-                                        <span>
-                                            Students<br>
-                                            <small
-                                                style="display: block; font-size: 0.6em; margin-top: 5px; opacity: 0.7;">
-                                                File: index.html<br>
-                                                Line: 90<br>
-                                                Insert &lt;img src="..."&gt; here
-                                            </small>
-                                        </span>
+                                    <div class="image-placeholder image-placeholder--2x3">
+                                        <img src="" alt="GCT Students">
                                     </div>
                                 </div>
                             </div>
@@ -160,11 +132,13 @@
                     <div class="grid grid--editorial-reverse">
                         <div class="about-visual" data-reveal="fade-right">
                             <div class="about-image-grid">
-                                <div class="about-image-item"
-                                    style="background: linear-gradient(135deg, var(--color-cream), var(--color-parchment)); aspect-ratio: 1; border-radius: var(--radius-lg);">
+                                <div class="image-placeholder image-placeholder--1x1">
+                                    <img src="" alt="GCT Campus Building">
+                                    <span class="image-placeholder__label">Campus View</span>
                                 </div>
-                                <div class="about-image-item"
-                                    style="background: linear-gradient(135deg, var(--color-burgundy), var(--color-wine)); aspect-ratio: 1; border-radius: var(--radius-lg);">
+                                <div class="image-placeholder image-placeholder--1x1">
+                                    <img src="" alt="Students in Laboratory">
+                                    <span class="image-placeholder__label">Lab Activity</span>
                                 </div>
                             </div>
                         </div>
@@ -215,11 +189,8 @@
                             </div>
                         </div>
                         <div class="principal-visual" data-reveal="fade-left">
-                            <div class="principal-image-placeholder">
-                                <svg viewBox="0 0 200 200" width="200" height="200">
-                                    <circle cx="100" cy="70" r="50" fill="var(--color-cream)" />
-                                    <ellipse cx="100" cy="180" rx="70" ry="50" fill="var(--color-cream)" />
-                                </svg>
+                            <div class="image-placeholder image-placeholder--1x1 principal-image-placeholder">
+                                <img src="" alt="Prof. Javed Ali Bhidwal - Principal">
                             </div>
                         </div>
                     </div>
@@ -593,180 +564,9 @@
         </main>
     </div>
 
-    <!-- Scripts -->
     <script src="scripts/navigation.js"></script>
     <script src="scripts/reveals.js"></script>
     <script src="scripts/app.js"></script>
-
-    <style>
-        /* Page-specific styles */
-        .hero-content {
-            padding-right: var(--space-2xl);
-        }
-
-        .hero-description {
-            font-size: var(--text-lg);
-            color: var(--color-slate);
-            line-height: var(--leading-relaxed);
-            margin-bottom: var(--space-xl);
-        }
-
-        .hero-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image-wrapper {
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .hero-decoration {
-            width: 100%;
-            height: auto;
-        }
-
-        .about-image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-md);
-            transform: rotate(-3deg);
-        }
-
-        .about-image-item:nth-child(2) {
-            transform: translateY(var(--space-xl));
-        }
-
-        .why-feature {
-            margin-bottom: var(--space-xl);
-            padding-left: var(--space-lg);
-            border-left: 3px solid var(--color-copper);
-        }
-
-        .why-feature h4 {
-            font-family: var(--font-display);
-            font-size: var(--text-lg);
-            color: var(--color-wine);
-            margin-bottom: var(--space-sm);
-        }
-
-        .why-feature p {
-            color: var(--color-slate);
-            margin-bottom: 0;
-        }
-
-        .cta-box {
-            background-color: var(--color-ivory);
-            padding: var(--space-3xl);
-            border-radius: var(--radius-xl);
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        @media (max-width: 768px) {
-            .hero-content {
-                padding-right: 0;
-                text-align: center;
-            }
-
-            .hero-actions {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .hero-visual {
-                margin-top: var(--space-2xl);
-            }
-
-            .about-image-grid {
-                transform: none;
-                margin-bottom: var(--space-2xl);
-            }
-
-            .about-image-item:nth-child(2) {
-                transform: none;
-            }
-        }
-
-        /* Principal's Message */
-        .principal-quote {
-            font-family: var(--font-display);
-            font-size: var(--text-xl);
-            font-style: italic;
-            color: var(--color-charcoal);
-            line-height: var(--leading-relaxed);
-            margin: 0;
-            padding: var(--space-lg) 0;
-            border-left: 4px solid var(--color-burgundy);
-            padding-left: var(--space-lg);
-        }
-
-        .principal-info {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xs);
-            margin-top: var(--space-lg);
-        }
-
-        .principal-info strong {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            font-size: var(--text-lg);
-        }
-
-        .principal-info span {
-            color: var(--color-slate);
-        }
-
-        .principal-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .principal-image-placeholder {
-            width: 250px;
-            height: 250px;
-            background: var(--color-cream);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Campus Life Cards */
-        .campus-card {
-            background: var(--color-parchment);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            transition: all var(--duration-normal) var(--ease-default);
-        }
-
-        .campus-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-            background: var(--color-ivory);
-        }
-
-        .campus-card__icon {
-            margin-bottom: var(--space-md);
-        }
-
-        .campus-card h4 {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            margin-bottom: var(--space-sm);
-        }
-
-        .campus-card p {
-            color: var(--color-slate);
-            font-size: var(--text-sm);
-            margin-bottom: 0;
-        }
-    </style>
 </body>
 
 </html>

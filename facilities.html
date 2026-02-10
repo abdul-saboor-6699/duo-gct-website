@@ -11,13 +11,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="styles/tokens.css">
     <link rel="stylesheet" href="styles/foundation.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/bootstrap-override.css">
 </head>
 
 <body>
@@ -30,8 +35,7 @@
         <main class="main-content" id="main-content">
 
             <!-- Hero Section -->
-            <section class="section section--hero"
-                style="min-height: 60vh; background: linear-gradient(135deg, var(--color-parchment), var(--color-cream));">
+            <section class="section section--hero section--hero-facilities">
                 <div class="container">
                     <span class="section-eyebrow" data-reveal="fade-up">Campus Resources</span>
                     <h1 data-reveal="fade-up" data-delay="100">Our Facilities</h1>
@@ -201,7 +205,7 @@
 
             <!-- CTA Section -->
             <section class="section section--alt">
-                <div class="container" style="text-align: center;">
+                <div class="container text-center">
                     <h2 data-reveal="fade-up">Experience Our Campus</h2>
                     <p data-reveal="fade-up" data-delay="100">
                         Schedule a visit to explore our facilities firsthand
@@ -220,116 +224,6 @@
     <script src="scripts/navigation.js"></script>
     <script src="scripts/reveals.js"></script>
     <script src="scripts/app.js"></script>
-
-    <style>
-        .hero-desc {
-            font-size: var(--text-lg);
-            color: var(--color-slate);
-            max-width: 700px;
-        }
-
-        .facility-card {
-            background: var(--color-ivory);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            transition: all var(--duration-normal) var(--ease-default);
-        }
-
-        .facility-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .facility-icon {
-            font-size: 3rem;
-            margin-bottom: var(--space-md);
-        }
-
-        .facility-card h4 {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            margin-bottom: var(--space-sm);
-        }
-
-        .facility-card p {
-            color: var(--color-slate);
-            font-size: var(--text-sm);
-            margin: 0;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: var(--space-lg);
-        }
-
-        .feature-list li {
-            padding: var(--space-sm) 0;
-            color: var(--color-slate);
-            position: relative;
-            padding-left: var(--space-lg);
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--color-copper);
-            font-weight: bold;
-        }
-
-        .library-visual {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-            background: var(--color-parchment);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-            text-align: center;
-        }
-
-        .sport-card {
-            background: var(--color-ivory);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            text-align: center;
-        }
-
-        .sport-icon {
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: var(--space-sm);
-        }
-
-        .sport-card h4 {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            margin-bottom: var(--space-xs);
-        }
-
-        .sport-card p {
-            color: var(--color-slate);
-            font-size: var(--text-sm);
-            margin: 0;
-        }
-
-        .amenity-card {
-            background: var(--color-ivory);
-            padding: var(--space-xl);
-            border-radius: var(--radius-lg);
-        }
-
-        .amenity-card h4 {
-            font-family: var(--font-display);
-            color: var(--color-wine);
-            margin-bottom: var(--space-sm);
-        }
-
-        .amenity-card p {
-            color: var(--color-slate);
-            margin: 0;
-        }
-    </style>
 </body>
 
 </html>

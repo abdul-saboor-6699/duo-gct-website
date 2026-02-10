@@ -14,6 +14,7 @@ class Navigation {
 
   init() {
     this.setActiveLinks();
+    this.initDropdowns();
   }
 
   setActiveLinks() {
@@ -37,6 +38,18 @@ class Navigation {
       }
     });
   }
+
+  initDropdowns() {
+    const dropdownToggles = document.querySelectorAll('.side-nav__link--dropdown');
+
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = toggle.closest('.side-nav__item--dropdown');
+        parent.classList.toggle('side-nav__item--open');
+      });
+    });
+  }
 }
 
 /**
@@ -55,7 +68,18 @@ function generateNavigation() {
   const navItems = [
     { href: rootPath + 'index.html', icon: 'home', label: 'Foundation' },
     { href: rootPath + 'heritage.html', icon: 'info', label: 'Heritage' },
-    { href: rootPath + 'pathways.html', icon: 'book', label: 'Pathways' },
+    {
+      href: rootPath + 'pathways.html',
+      icon: 'book',
+      label: 'Pathways',
+      dropdown: [
+        { href: rootPath + 'divisions/computing.html', label: 'Computer Information Technology' },
+        { href: rootPath + 'divisions/electrical.html', label: 'Electrical Technology' },
+        { href: rootPath + 'divisions/machinery.html', label: 'Mechanical Technology' },
+        { href: rootPath + 'divisions/construction.html', label: 'Civil Technology' },
+        { href: rootPath + 'divisions/circuits.html', label: 'Electronics Technology' }
+      ]
+    },
     { href: rootPath + 'enrollment.html', icon: 'user-plus', label: 'Enrollment' },
     { href: rootPath + 'chronicle.html', icon: 'camera', label: 'Chronicle' },
     { href: rootPath + 'connect.html', icon: 'mail', label: 'Connect' }
@@ -67,15 +91,36 @@ function generateNavigation() {
     book: `<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
     'user-plus': `<svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>`,
     camera: `<svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
-    mail: `<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`
+    mail: `<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+    chevron: `<svg viewBox="0 0 24 24" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>`
   };
 
-  const linksHTML = navItems.map(item => `
-    <a href="${item.href}" class="side-nav__link">
-      <span class="side-nav__icon">${icons[item.icon]}</span>
-      <span class="side-nav__label">${item.label}</span>
-    </a>
-  `).join('');
+  const linksHTML = navItems.map(item => {
+    if (item.dropdown) {
+      const dropdownItems = item.dropdown.map(dropItem =>
+        `<a href="${dropItem.href}" class="side-nav__dropdown-link">${dropItem.label}</a>`
+      ).join('');
+
+      return `
+        <div class="side-nav__item side-nav__item--has-dropdown">
+          <a href="${item.href}" class="side-nav__link">
+            <span class="side-nav__icon">${icons[item.icon]}</span>
+            <span class="side-nav__label">${item.label}</span>
+          </a>
+          <div class="side-nav__dropdown-panel">
+            <div class="side-nav__dropdown-title">Academic Programs</div>
+            ${dropdownItems}
+          </div>
+        </div>
+      `;
+    }
+    return `
+      <a href="${item.href}" class="side-nav__link">
+        <span class="side-nav__icon">${icons[item.icon]}</span>
+        <span class="side-nav__label">${item.label}</span>
+      </a>
+    `;
+  }).join('');
 
   // Generate bottom nav links for mobile
   const bottomNavHTML = navItems.map(item => `
