@@ -15,6 +15,7 @@
         transform var(--duration-slow) var(--ease-default);
 }
 
+
 [data-reveal].revealed {
     opacity: 1;
     transform: none;
