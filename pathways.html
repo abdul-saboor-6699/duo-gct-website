@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="styles/bootstrap-override.css">
+    <link rel="stylesheet" href="styles/pathways_custom.css">
 </head>
 
 <body>
@@ -41,14 +42,14 @@
 
             <!-- Page Header -->
             <section class="section section--hero section--hero-alt">
-                <img src="/images/department-banner.png" alt="Programs background" class="hero-bg-image">
+                <img src="images/department-banner.png" alt="Academic Pathways" class="hero-bg-image">
                 <div class="container">
-                    <div class="section-header section-header--left section-header--hero">
+                    <div class="section-header section-header--hero">
                         <span class="section-eyebrow" data-reveal="fade-up">Technical Education</span>
                         <h1 data-reveal="fade-up" data-delay="100">Academic Pathways</h1>
                         <div class="divider" data-reveal="fade-up" data-delay="200"></div>
-                        <p class="section-subtitle section-subtitle--left" data-reveal="fade-up" data-delay="300">
-                            Choose your path to a rewarding technical career. Our five specialized
+                        <p class="section-subtitle" data-reveal="fade-up" data-delay="300">
+                            Choose your path to a rewarding technical career. Our specialized
                             divisions offer comprehensive diploma programs designed for industry success.
                         </p>
                     </div>
@@ -75,85 +76,81 @@
                 </div>
             </section>
 
-            <!-- Computing Division -->
-            <section class="section" id="computing">
+            <section class="section pathway-section--with-bg" id="computing">
+                <img src="images/student-Community.jpeg" alt="Computing Labs" class="pathway-bg-image">
+                <div class="pathway-overlay"></div>
                 <div class="container">
-                    <div class="grid grid--editorial">
-                        <div class="pathway-content">
-                            <span class="badge badge--primary" data-reveal="fade-up">DAE Program</span>
-                            <h2 data-reveal="fade-up" data-delay="100">DAE Computer Information Technology</h2>
-                            <div class="divider" data-reveal="fade-up" data-delay="200"></div>
-                            <p data-reveal="fade-up" data-delay="300">
-                                Master cutting-edge software development, network management, and cloud
-                                computing technologies. Build innovative digital solutions and secure
-                                your place in the IT industry.
+                    <div class="flex">
+                        <div class="pathway-content--glass" data-reveal="fade-up">
+                            <span class="badge badge--primary">DAE Program</span>
+                            <h2>Computing Information Technology</h2>
+                            <div class="divider"></div>
+                            <p>
+                                Master cutting-edge software development and network management.
+                                Build innovative digital solutions for the modern IT industry.
                             </p>
 
-                            <div class="pathway-modules" data-reveal="fade-up" data-delay="400">
-                                <h4>Core Learning Areas</h4>
-                                <ul class="module-list">
-                                    <li>Programming Fundamentals & Application Development</li>
-                                    <li>Database Design & Management Systems</li>
-                                    <li>Computer Networks & System Administration</li>
-                                    <li>Web Technologies & Digital Solutions</li>
-                                    <li>Hardware Maintenance & Troubleshooting</li>
-                                </ul>
+                            <div class="core-learning-grid">
+                                <div class="core-component-card">
+                                    <h5>Software</h5>
+                                    <p>Web & App Development</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Data</h5>
+                                    <p>Database & Cloud Systems</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Network</h5>
+                                    <p>Security & Administration</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Hardware</h5>
+                                    <p>Systems & Troubleshooting</p>
+                                </div>
                             </div>
 
-                            <a href="divisions/computing.html" class="btn btn--primary mt-lg" data-reveal="fade-up"
-                                data-delay="500">
+                            <a href="divisions/computing.html" class="btn btn--copper mt-xl">
                                 Explore Computing Division
                             </a>
-                        </div>
-                        <div class="pathway-visual" data-reveal="fade-left">
-                            <div class="pathway-icon-box">
-                                <svg viewBox="0 0 24 24" width="80" height="80" stroke="var(--color-ivory)"
-                                    stroke-width="1" fill="none">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                                    <line x1="8" y1="21" x2="16" y2="21" />
-                                    <line x1="12" y1="17" x2="12" y2="21" />
-                                </svg>
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Electrical Division -->
-            <section class="section section--cream" id="electrical">
+            <section class="section pathway-section--with-bg pathway-section--reverse" id="electrical">
+                <img src="images/electrical.jpeg" alt="Electrical Power Systems" class="pathway-bg-image">
+                <div class="pathway-overlay"></div>
                 <div class="container">
-                    <div class="grid grid--editorial-reverse">
-                        <div class="pathway-visual" data-reveal="fade-right">
-                            <div class="pathway-icon-box pathway-icon-box--alt">
-                                <svg viewBox="0 0 24 24" width="80" height="80" stroke="var(--color-ivory)"
-                                    stroke-width="1" fill="none">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="pathway-content">
-                            <span class="badge badge--copper" data-reveal="fade-up">DAE Program</span>
-                            <h2 data-reveal="fade-up" data-delay="100">DAE Electrical Technology</h2>
-                            <div class="divider" data-reveal="fade-up" data-delay="200"></div>
-                            <p data-reveal="fade-up" data-delay="300">
-                                Learn electrical systems, power generation, distribution, and renewable
-                                energy technologies. Design and maintain safe, efficient electrical
-                                networks that power modern infrastructure.
+                    <div class="flex justify-end">
+                        <div class="pathway-content--glass" data-reveal="fade-up">
+                            <span class="badge badge--copper">DAE Program</span>
+                            <h2>Electrical Technology</h2>
+                            <div class="divider"></div>
+                            <p>
+                                Learn power generation, distribution, and renewable energy.
+                                Design safe, efficient electrical networks for modern infrastructure.
                             </p>
 
-                            <div class="pathway-modules" data-reveal="fade-up" data-delay="400">
-                                <h4>Core Learning Areas</h4>
-                                <ul class="module-list">
-                                    <li>Electrical Circuit Analysis & Design</li>
-                                    <li>Power Generation & Distribution</li>
-                                    <li>Electrical Machines & Transformers</li>
-                                    <li>Industrial Wiring & Installation</li>
-                                    <li>Safety Standards & Regulations</li>
-                                </ul>
+                            <div class="core-learning-grid">
+                                <div class="core-component-card">
+                                    <h5>Power</h5>
+                                    <p>Generation & Distribution</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Design</h5>
+                                    <p>Circuit Analysis & Wiring</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Machines</h5>
+                                    <p>Motors & Transformers</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Safety</h5>
+                                    <p>Standards & Industrial Laws</p>
+                                </div>
                             </div>
 
-                            <a href="divisions/electrical.html" class="btn btn--primary mt-lg" data-reveal="fade-up"
-                                data-delay="500">
+                            <a href="divisions/electrical.html" class="btn btn--copper mt-xl">
                                 Explore Electrical Division
                             </a>
                         </div>
@@ -161,91 +158,81 @@
                 </div>
             </section>
 
-            <!-- Mechanical Division -->
-            <section class="section" id="mechanical">
+            <section class="section pathway-section--with-bg" id="mechanical">
+                <img src="images/mechanical.jpeg" alt="Mechanical Engineering" class="pathway-bg-image">
+                <div class="pathway-overlay"></div>
                 <div class="container">
-                    <div class="grid grid--editorial">
-                        <div class="pathway-content">
-                            <span class="badge badge--secondary" data-reveal="fade-up">DAE Program</span>
-                            <h2 data-reveal="fade-up" data-delay="100">DAE Mechanical Technology</h2>
-                            <div class="divider" data-reveal="fade-up" data-delay="200"></div>
-                            <p data-reveal="fade-up" data-delay="300">
-                                Comprehensive training in CAD/CAM, CNC programming, industrial robotics,
-                                and precision engineering. Innovate machines that drive efficiency in
-                                modern manufacturing.
+                    <div class="flex">
+                        <div class="pathway-content--glass" data-reveal="fade-up">
+                            <span class="badge badge--secondary">DAE Program</span>
+                            <h2>Mechanical Technology</h2>
+                            <div class="divider"></div>
+                            <p>
+                                Comprehensive training in CAD/CAM, CNC programming, and precision engineering.
+                                Innovate the machines that drive modern manufacturing.
                             </p>
 
-                            <div class="pathway-modules" data-reveal="fade-up" data-delay="400">
-                                <h4>Core Learning Areas</h4>
-                                <ul class="module-list">
-                                    <li>Machine Design & CAD Drawing</li>
-                                    <li>Manufacturing Processes & Techniques</li>
-                                    <li>Thermodynamics & Fluid Mechanics</li>
-                                    <li>Workshop Practice & Machining</li>
-                                    <li>Industrial Maintenance & Repair</li>
-                                </ul>
+                            <div class="core-learning-grid">
+                                <div class="core-component-card">
+                                    <h5>Precision</h5>
+                                    <p>Machining & Workshop</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Design</h5>
+                                    <p>CAD/CAM & Engineering</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Physics</h5>
+                                    <p>Thermodynamics & Fluids</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Industry</h5>
+                                    <p>Maintenance & Repair</p>
+                                </div>
                             </div>
 
-                            <a href="divisions/machinery.html" class="btn btn--primary mt-lg" data-reveal="fade-up"
-                                data-delay="500">
+                            <a href="divisions/machinery.html" class="btn btn--copper mt-xl">
                                 Explore Mechanical Division
                             </a>
-                        </div>
-                        <div class="pathway-visual" data-reveal="fade-left">
-                            <div class="pathway-icon-box">
-                                <svg viewBox="0 0 24 24" width="80" height="80" stroke="var(--color-ivory)"
-                                    stroke-width="1" fill="none">
-                                    <circle cx="12" cy="12" r="3" />
-                                    <path
-                                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                                </svg>
-                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Civil Division -->
-            <section class="section section--alt" id="civil">
+            <section class="section pathway-section--with-bg pathway-section--reverse" id="civil">
+                <img src="images/college-front.jpeg" alt="Construction and Infrastructure" class="pathway-bg-image">
+                <div class="pathway-overlay"></div>
                 <div class="container">
-                    <div class="grid grid--editorial-reverse">
-                        <div class="pathway-visual" data-reveal="fade-right">
-                            <div class="pathway-icon-box pathway-icon-box--alt">
-                                <svg viewBox="0 0 24 24" width="80" height="80" stroke="var(--color-ivory)"
-                                    stroke-width="1" fill="none">
-                                    <path d="M3 21h18" />
-                                    <path d="M5 21V7l8-4v18" />
-                                    <path d="M19 21V11l-6-4" />
-                                    <path d="M9 9v.01" />
-                                    <path d="M9 12v.01" />
-                                    <path d="M9 15v.01" />
-                                    <path d="M9 18v.01" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="pathway-content">
-                            <span class="badge badge--primary" data-reveal="fade-up">DAE Program</span>
-                            <h2 data-reveal="fade-up" data-delay="100">DAE Civil Technology</h2>
-                            <div class="divider" data-reveal="fade-up" data-delay="200"></div>
-                            <p data-reveal="fade-up" data-delay="300">
-                                Prepare for construction, infrastructure development, and environmental
-                                engineering roles. Master structural design, project management, and
-                                sustainable construction practices.
+                    <div class="flex justify-end">
+                        <div class="pathway-content--glass" data-reveal="fade-up">
+                            <span class="badge badge--primary">DAE Program</span>
+                            <h2>Civil Technology</h2>
+                            <div class="divider"></div>
+                            <p>
+                                Prepare for roles in construction and infrastructure.
+                                Master structural design and sustainable building practices.
                             </p>
 
-                            <div class="pathway-modules" data-reveal="fade-up" data-delay="400">
-                                <h4>Core Learning Areas</h4>
-                                <ul class="module-list">
-                                    <li>Surveying & Leveling Techniques</li>
-                                    <li>Structural Analysis & Design</li>
-                                    <li>Construction Materials & Methods</li>
-                                    <li>Building Drawing & AutoCAD</li>
-                                    <li>Project Estimation & Costing</li>
-                                </ul>
+                            <div class="core-learning-grid">
+                                <div class="core-component-card">
+                                    <h5>Survey</h5>
+                                    <p>Leveling & Techniques</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Structure</h5>
+                                    <p>Analysis & Design</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Building</h5>
+                                    <p>Materials & Methods</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Project</h5>
+                                    <p>Estimation & Costs</p>
+                                </div>
                             </div>
 
-                            <a href="divisions/construction.html" class="btn btn--primary mt-lg" data-reveal="fade-up"
-                                data-delay="500">
+                            <a href="divisions/construction.html" class="btn btn--copper mt-xl">
                                 Explore Construction Division
                             </a>
                         </div>
@@ -253,52 +240,42 @@
                 </div>
             </section>
 
-            <!-- Electronics Division -->
-            <section class="section" id="electronics">
+            <section class="section pathway-section--with-bg" id="electronics">
+                <img src="images/electronic.jpeg" alt="Electronics and IoT" class="pathway-bg-image">
+                <div class="pathway-overlay"></div>
                 <div class="container">
-                    <div class="grid grid--editorial">
-                        <div class="pathway-content">
-                            <span class="badge badge--copper" data-reveal="fade-up">DAE Program</span>
-                            <h2 data-reveal="fade-up" data-delay="100">DAE Electronics Technology</h2>
-                            <div class="divider" data-reveal="fade-up" data-delay="200"></div>
-                            <p data-reveal="fade-up" data-delay="300">
-                                Advanced electronic systems, embedded systems, signal processing, and IoT
-                                technologies. Design circuits, microcontrollers, and telecommunications
-                                systems for the connected world.
+                    <div class="flex">
+                        <div class="pathway-content--glass" data-reveal="fade-up">
+                            <span class="badge badge--copper">DAE Program</span>
+                            <h2>Electronics Technology</h2>
+                            <div class="divider"></div>
+                            <p>
+                                Advanced electronic systems, embedded systems, and IoT.
+                                Design microcontrollers and communication systems for the connected world.
                             </p>
 
-                            <div class="pathway-modules" data-reveal="fade-up" data-delay="400">
-                                <h4>Core Learning Areas</h4>
-                                <ul class="module-list">
-                                    <li>Electronic Components & Circuits</li>
-                                    <li>Digital Electronics & Logic Design</li>
-                                    <li>Microprocessor & Microcontroller Systems</li>
-                                    <li>Communication Systems & Networks</li>
-                                    <li>Instrumentation & Control</li>
-                                </ul>
+                            <div class="core-learning-grid">
+                                <div class="core-component-card">
+                                    <h5>Circuits</h5>
+                                    <p>Components & Design</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Digital</h5>
+                                    <p>Logic & Processing</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>IoT</h5>
+                                    <p>Embedded Systems</p>
+                                </div>
+                                <div class="core-component-card">
+                                    <h5>Control</h5>
+                                    <p>Instrumentation Systems</p>
+                                </div>
                             </div>
 
-                            <a href="divisions/circuits.html" class="btn btn--primary mt-lg" data-reveal="fade-up"
-                                data-delay="500">
+                            <a href="divisions/circuits.html" class="btn btn--copper mt-xl">
                                 Explore Electronics Division
                             </a>
-                        </div>
-                        <div class="pathway-visual" data-reveal="fade-left">
-                            <div class="pathway-icon-box">
-                                <svg viewBox="0 0 24 24" width="80" height="80" stroke="var(--color-ivory)"
-                                    stroke-width="1" fill="none">
-                                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-                                    <rect x="9" y="9" width="6" height="6" />
-                                    <line x1="9" y1="1" x2="9" y2="4" />
-                                    <line x1="15" y1="1" x2="15" y2="4" />
-                                    <line x1="9" y1="20" x2="9" y2="23" />
-                                    <line x1="15" y1="20" x2="15" y2="23" />
-                                    <line x1="20" y1="9" x2="23" y2="9" />
-                                    <line x1="20" y1="14" x2="23" y2="14" />
-                                    <line x1="1" y1="9" x2="4" y2="9" />
-                                    <line x1="1" y1="14" x2="4" y2="14" />
-                                </svg>
-                            </div>
                         </div>
                     </div>
                 </div>
